@@ -15,6 +15,9 @@ export default class Header extends Component {
                     <div className='font-Poppins font-bold text-slate-300 text-2xl	'>Book Catalog</div>
                 </div>
                 <div className='w-1/2'>
+                              <div className='flex w-full justify-end gap-12 '>
+                                  
+                    </div>
                     {/* <div className='flex w-full justify-end gap-12 '>
                       
                         <NavLink to={"/"} className= 'cursor-pointer text-slate-300 pr-0'>Home</NavLink>
