@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Header from '../component/Header';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import bookphot from'../assets/book.png'
+import { TextField } from '@mui/material'
+import SearchIcon from '@mui/icons-material/Search';
 
 export default class Crud extends Component {
   render() {
@@ -19,16 +21,27 @@ export default class Crud extends Component {
              <h1 className='text-2xl '>Books Details</h1>
           </div>
           {/* conten */}
-          
-          <div className='grid grid-cols-2 gap-4'>
-            <div>01
-              
-              
+           <from>
+          <div className='grid grid-cols-2 gap-4 mt-9'>
+            <div className='p-5 ml-2 border-1 rounded-2xl shadow-2xl shadow-black'>01
+               
+                <div className='flex justify-center space-x-4'>
+                            <TextField
+                            label="Book Id"
+                            name="name"
+                            type="text"
+                            variant="outlined"
+                            placeholder="Enter Your Product Name"
+                             sx={{ width: 300 }}
+                            required
+                  />
+                  <button type="button" class="btn btn-success">Search <SearchIcon/></button>
                 </div>
+
+            </div>
                   
             <div className='p-10'>
-              
-              <table class="table text-2xl">
+              <table class="table text-2xl shadow-xl shadow-slate-400">
                       <thead>
                         <tr>
                           <th scope="col">Book Id</th>
@@ -50,15 +63,12 @@ export default class Crud extends Component {
                           <td>Thornton</td>
                           <td>@fat</td>
                         </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td colspan="2">Larry the Bird</td>
-                          <td>@twitter</td>
-                        </tr>
+                       
                       </tbody>
                     </table>
                  </div>
-          </div>
+            </div>
+            </from>
       </div>
     
       </>
