@@ -4,7 +4,7 @@ import Header from '../component/Header'
 import Bookimg from '../assets/book.png'
 import { TextField } from '@mui/material'
 import Autocomplete from '@mui/material/Autocomplete';
-
+import BookCard from '../component/BookCard';
 export default class Home extends Component {
   render() {
       return (
@@ -33,7 +33,11 @@ export default class Home extends Component {
                                 renderInput={(params) => <TextField {...params} label="Categories" />}
                               />
                         </form>
-                  </div>
+            </div>
+            {/* Card  Div  */}
+            <div>
+              <BookCard/>
+            </div>
               </div>
         </>
     
