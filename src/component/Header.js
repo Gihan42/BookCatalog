@@ -19,7 +19,7 @@ export default class Header extends Component {
                 <div className='w-1/2 flex'>
                               <div className='flex w-full justify-start gap-12 align-middle '>
                                  <NavLink to={"/"} className= 'cursor-pointer  text-lg  text-white pr-0'>Home</NavLink>
-                                 <NavLink to={"/"} className='text-white text-lg '>About</NavLink>
+                                 <NavLink to={"/details"} className='text-white text-lg '>Book Details</NavLink>
                               
                 
                               </div>
