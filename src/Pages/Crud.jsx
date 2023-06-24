@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
 import Header from '../component/Header';
-import AutoStoriesIcon from '@mui/icons-material/AutoStories';
-import bookphot from'../assets/book.png'
+import DeblurIcon from '@mui/icons-material/Deblur';
+import bookphot from '../assets/book.png'
 import { TextField } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search';
 import SaveAltIcon from '@mui/icons-material/SaveAlt';
@@ -23,38 +23,14 @@ export default class Crud extends Component {
           {/* conten */}
            <from>
           <div className='grid grid-cols-2 gap-4 mt-9'>
-            <div className=' bg-white p-5 ml-2 border-1 rounded-2xl shadow-2xl shadow-black'>
+            <div className=' bg-white pl-5 pr-5 ml-2 pb-5 border-1 rounded-2xl shadow-2xl shadow-black'>
+                          <div className='font-Poppins font-bold text-cyan-900 text-4xl flex	justify-center'>
+                            <img src={bookphot} alt=" " className='h-14 w-1h-14 mr-3' />
+                          <h1 className='mt-1 text-4xl'>Books Details </h1> 
+                          </div>
                
-                <div className='flex justify-center space-x-4'>
-                            <TextField
-                            label="Book Id"
-                            name="name"
-                            type="text"
-                            variant="outlined"
-                            placeholder="Enter Your Product Name"
-                             sx={{ width: 300 }}
-                            required
-                  />
-                  <button type="button" class="btn btn-success">Search <SearchIcon/></button>
-                </div>
-            <div className='flex justify-start mt-6 space-x-20 '>
-                <div className='text-xl'>Book Id
-                <TextField
-                  margin="normal"
-                  required
-                  fullWidth
-                  id="DId"
-                  label="Book Id"
-                  name="DId"
-                  autoFocus
-                  type="text"
-                  variant="standard"
-
-                  value={""}
-                  onChange={""}
-                />
-                  </div>
-                  <div className='text-xl'>Book Name
+            <div className='flex justify-start mt-10 space-x-20 '>
+                <div className='text-xl'><DeblurIcon/>Book Name
                 <TextField
                   margin="normal"
                   required
@@ -70,9 +46,13 @@ export default class Crud extends Component {
                   onChange={""}
                 />
                   </div>
+                  
+                   <button type="button" class="btn btn-success mt-5 h-12 w-28">Search <SearchIcon/></button>
+
+                  
               </div>
             <div className='flex justify-start mt-6 space-x-20 '>
-                <div className='text-xl space-y-2'>Description
+                <div className='text-xl space-y-2'><DeblurIcon/>Description
                 <TextField
                     label="Description"
                     type="text"
@@ -90,7 +70,7 @@ export default class Crud extends Component {
                  </div>
                 </div>
                   <div className='flex justify-start mt-6 space-x-20 '>
-                <div className='text-xl'>Catergories
+                <div className='text-xl'><DeblurIcon/>Catergories
               <Autocomplete
                    disablePortal
                    options={top100Films}
@@ -99,7 +79,7 @@ export default class Crud extends Component {
                     renderInput={(params) => <TextField {...params} label="Categories" />}
                   />
                                 </div>
-                  <div className='text-xl'>Author Name
+                  <div className='text-xl'><DeblurIcon/>Author Name
                 <TextField
                   margin="normal"
                   required
@@ -117,7 +97,7 @@ export default class Crud extends Component {
                   </div>
               </div>
                 <div className='flex justify-start mt-3 space-x-6 '>
-                <div className='text-xl'>Price
+                <div className='text-xl'><DeblurIcon/>Price
                 <TextField
                   margin="normal"
                   required
