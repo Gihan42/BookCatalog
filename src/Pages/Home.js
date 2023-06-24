@@ -35,7 +35,7 @@ export default class Home extends Component {
                         </form>
             </div>
             {/* Card  Div  */}
-            <div>
+            <div className='border p-10 mt-10 flex gap-10 justify-center flex-wrap items-center'>
               <BookCard/>
             </div>
               </div>
