@@ -6,8 +6,8 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 
 export default class Header extends Component {
     render() {
-        const navStyle="font-bold border-b-2"
-        const clr="bg-black"
+        // const navStyle="font-bold border-b-2"
+        // const clr="bg-black"
       return (
         <>
        <div className='bg-slate-900 h-20 p-4 w-full fixed top-0 z-10 '>

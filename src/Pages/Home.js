@@ -40,6 +40,10 @@ export default class Home extends Component {
             </div>
             {/* Card  Div  */}
             <div className='border p-10 mt-10 flex gap-10 justify-center flex-wrap items-center'>
+              <BookCard />
+              <BookCard />
+              <BookCard />
+              <BookCard />
               <BookCard/>
             </div>
               </div>

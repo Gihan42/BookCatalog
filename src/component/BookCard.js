@@ -13,19 +13,7 @@ export default class BookCard extends Component {
     return (
         <div>
       <Card className='hover:bg-slate-300 drop-shadow-2xl shadow-black rounded-3xl border cursor-pointer ' sx={{ maxWidth: 345 }}>
-      <CardMedia
-        // component="img"
-        // alt="green iguana"
-        // height="140"
-        //     image="../assets/book-composition-with-open-book.jpg"   
-            sx={{
-              height: 140
-              
-            }}
-        image="../assets/book-composition-with-open-book.jpg"
-        title="green iguana"
-          />
-         
+          <img src={photo } alt=" " className='h-60 w-full mr-3'/>
       <CardContent>
         <Typography gutterBottom variant="h4" component="div">
          Book Name
