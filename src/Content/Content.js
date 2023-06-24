@@ -8,11 +8,11 @@ export default class Content extends Component {
   render() {
     return (
         <div className='mt-20 flex  justify-center h-screen'>
-            {/* <Routes>
+            <Routes>
             <Route path='/home' element={<Home />}></Route>
             <Route path='/crud' element={<Crud />}></Route>
             </Routes>
-            */}
+           
         </div>
     )
   }
