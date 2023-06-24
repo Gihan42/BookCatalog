@@ -6,5 +6,6 @@
     h1 {
       @apply text-red-600 text-4xl text-center text-abc-200 font-medium text-base;
     }
+    
 
   }
