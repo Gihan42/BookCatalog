@@ -9,7 +9,7 @@ import SaveAltIcon from '@mui/icons-material/SaveAlt';
 import UpdateIcon from '@mui/icons-material/Update';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Autocomplete from '@mui/material/Autocomplete';
-
+import axios from '../axios';
 
 export default class Crud extends Component {
 constructor() {
@@ -23,7 +23,7 @@ constructor() {
       price:0
     };
   }
-    handleInput = (event) => {
+  handleInput = (event) => {
     const { name, value, type } = event.target;
     const inputValue = type == "number" ? parseInt(value) : value;
 
@@ -31,7 +31,28 @@ constructor() {
       ...prevState,
       [name]: value,
     }));
-  };
+    // Save Book 
+    handleSubmit = (event) => {
+      event.preventDefault();
+      const { bookId, bookName, description, category, contact, author, price } = this.state;
+      let newBook = {
+        bookId: bookId,
+        bookName: bookName,
+        description: description,
+        category: category,
+        contact:contact,
+        author: author,
+        price: price,
+        
+      };
+      axios.post("http://localhost:8080/api/v1/books", newBook)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((error) => { });
+    };
+
+  }
   render() {
     return (
       <>
