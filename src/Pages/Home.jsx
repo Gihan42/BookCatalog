@@ -76,10 +76,4 @@ export default class Home extends Component {
   }
 }
 
-const top100Films = [
-  { label: 'All' },
-  { label: 'Horror' },
-  { label: 'Music' },
-  { label: 'History' },
-  { label: 'Love Story' },
-];
+
