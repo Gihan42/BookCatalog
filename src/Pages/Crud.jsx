@@ -10,7 +10,28 @@ import UpdateIcon from '@mui/icons-material/Update';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Autocomplete from '@mui/material/Autocomplete';
 
+
 export default class Crud extends Component {
+constructor() {
+    super();
+    this.state = {
+      bookId: 0,
+      bookName: "",
+      description: "",
+      category: "",
+      author: "",
+      price:0
+    };
+  }
+    handleInput = (event) => {
+    const { name, value, type } = event.target;
+    const inputValue = type == "number" ? parseInt(value) : value;
+
+    this.setState((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
   render() {
     return (
       <>
@@ -35,15 +56,15 @@ export default class Crud extends Component {
                   margin="normal"
                   required
                   fullWidth
-                  id="DId"
+                  id="bookName"
                   label="Book Name"
-                  name="DId"
+                  name="bookName"
                   autoFocus
                   type="text"
                   variant="standard"
 
-                  value={""}
-                  onChange={""}
+                  value={this.state.bookName}
+                  onChange={this.handleInput}
                 />
                   </div>
                   
@@ -63,16 +84,17 @@ export default class Crud extends Component {
                     minRows={4}
                     maxRows={Infinity}
                     required
-
-                  value={""}
-                  onChange={""}
+                    name='description'
+                  value={this.state.description}
+                  onChange={this.handleInput}
                 />
                  </div>
                 </div>
                   <div className='flex justify-start mt-6 space-x-20 '>
                 <div className='text-xl'><DeblurIcon/>Catergories
               <Autocomplete
-                   disablePortal
+                      disablePortal
+                      name='category'
                    options={top100Films}
                    id="combo-box-demo"
                    sx={{ width: 300 }}
@@ -84,15 +106,15 @@ export default class Crud extends Component {
                   margin="normal"
                   required
                   fullWidth
-                  id="DId"
+                  id="author"
                   label="Author Name"
-                  name="DId"
+                  name="author"
                   autoFocus
                   type="text"
                   variant="standard"
 
-                  value={""}
-                  onChange={""}
+                  value={this.state.author}
+                  onChange={this.handleInput}
                 />
                   </div>
               </div>
@@ -102,14 +124,14 @@ export default class Crud extends Component {
                   margin="normal"
                   required
                   fullWidth
-                  id="DId"
+                  id="price"
                   label="Price"
-                  name="DId"
+                  name="price"
                   autoFocus
                   type="text"
                   variant="standard"
-                  value={""}
-                  onChange={""}
+                  value={this.state.price}
+                  onChange={this.handleInput}
                     />
                     
                
