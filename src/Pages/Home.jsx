@@ -7,6 +7,9 @@ import Autocomplete from '@mui/material/Autocomplete';
 import BookCard from '../component/BookCard';
 import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
 import axios from '../axios';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+
 
 export default class Home extends Component {
   constructor() {
@@ -29,7 +32,9 @@ export default class Home extends Component {
       }));
     });
   }
-
+handleChange = () => {
+    setAge(target.value );
+  };
   render() {
     return (
       <>
@@ -53,21 +58,34 @@ export default class Home extends Component {
                 sx={{ width: 800 }}
                 required
               />
-              <Autocomplete
-                disablePortal
-                options={top100Films}
-                id="combo-box-demo"
+                    <Select
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  value={0}
+                  label="Age"
+                onChange={""}
                 sx={{ width: 300 }}
-                renderInput={(params) => <TextField {...params} label="Categories" />}
-              />
+              >
+                  <MenuItem value={0}>All</MenuItem>
+                  <MenuItem value={10}>Horror</MenuItem>
+                  <MenuItem value={20}>Romantic</MenuItem>
+                  <MenuItem value={30}>Novels</MenuItem>
+                </Select>
             </form>
           </div>
           {/* Card  Div  */}
           <div className='border p-10 mt-10 flex gap-10 justify-center flex-wrap items-center'>
             {this.state.bookList.map((book) => (
-              <div>
-                {book.bookId}
-              </div>
+
+              console.log(book),
+              (<BookCard
+                key={book.bookId}
+                bookName={book.bookName}
+                desc={book.description}
+                price={book.price}
+                author={book.author}
+              />)
+                 
             ))}
           </div>
         </div>

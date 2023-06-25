@@ -285,7 +285,7 @@ export default class Crud extends Component {
                 <table className="table text-xl shadow-xl shadow-slate-400">
                   <thead>
                     <tr>
-                      <th scope="col">Book Id</th>
+                      <th scope="col"> Id</th>
                       <th scope="col">Book Name</th>
                       <th scope="col">Description</th>
                       <th scope="col">Author Name</th>

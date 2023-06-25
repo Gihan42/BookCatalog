@@ -8,27 +8,30 @@ import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import photo from '../assets/book-composition-with-open-book.jpg'
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 export default class BookCard extends Component {
-    render() {
+  render() {
+    
     return (
         <div>
-      <Card className='hover:bg-slate-300 drop-shadow-2xl shadow-black rounded-3xl border cursor-pointer ' sx={{ maxWidth: 345 }}>
+      <Card className='hover:bg-slate-300 drop-shadow-2xl shadow-black rounded-3xl border  cursor-pointer ' sx={{ maxWidth: 345 }}>
           <img src={photo } alt=" " className='h-60 w-full mr-3'/>
       <CardContent>
         <Typography gutterBottom variant="h4" component="div">
-         Book Name
+         {this.props.bookName}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+             {this.props.desc}
             </Typography>
-             <Typography gutterBottom variant="h5" component="div" className='flex ml-3'>
-              Author : <div> Martin</div>
+             <Typography gutterBottom variant="h5" component="div" className='flex-col ml-3'>
+              <div className='text-lg'>{this.props.author}</div>
+               <div className='text-lg'>Rs: {this.props.price}</div>
         </Typography>
       </CardContent>
       <CardActions>
         <Button  size="small"><FavoriteIcon className='hover:text-cyan-950'/></Button>
-        <Button size="small"><ShareIcon className='hover:text-cyan-950'/></Button>
+            <Button size="small"><ShareIcon className='hover:text-cyan-950' /></Button>
+              <Button size="small"><AddShoppingCartIcon className='hover:text-cyan-950'/></Button>
       </CardActions>
     </Card>
     </div>
