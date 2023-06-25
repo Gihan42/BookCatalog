@@ -135,7 +135,7 @@ export default class Crud extends Component {
     return (
       <>
         <Header />
-        <div className="bg-slate-200  h-full w-full mt-0 space-y-6 pr-11 pl-11 pt-11 justify-center">
+        <div className="bg-slate-200  h-max w-full mt-0 space-y-6 pr-11 pl-11 pt-11 justify-center">
           <div className="cursor-pointer w-full pt-2 border-2 border-white pb-0 pl-6 bg-cyan-950 text-white rounded flex justify-between items-center ">
             <h1 className="text-2xl ">Books Details</h1>
           </div>
