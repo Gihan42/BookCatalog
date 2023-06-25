@@ -133,14 +133,14 @@ export default class Crud extends Component {
     return (
       <>
         <Header />
-        <div className="bg-slate-200 h-full w-full mt-0 space-y-6 pr-11 pl-11 pt-11 justify-center ">
+        <div className="bg-slate-500 h-full w-full mt-0 space-y-6 pr-11 pl-11 pt-11 justify-center">
           <div className="cursor-pointer w-full pt-2 border-2 border-white pb-0 pl-6 bg-cyan-950 text-white rounded flex justify-between items-center ">
             <h1 className="text-2xl ">Books Details</h1>
           </div>
           {/* conten */}
           <form>
             <div className="grid grid-cols-2 gap-4 mt-9">
-              <div className=" bg-white pl-5 pr-5 ml-2 pb-5 border-1 rounded-2xl shadow-2xl shadow-black">
+              <div className=" bg-white pl-5 pr-5 ml-2 pb-5 border-1 max-h-screen rounded-2xl shadow-2xl shadow-black">
                 <div className="font-Poppins font-bold text-cyan-900 text-4xl flex	justify-center">
                   <img src={bookphot} alt=" " className="h-14 w-1h-14 mr-3" />
                   <h1 className="mt-1 text-4xl">Books Details</h1>
@@ -282,7 +282,7 @@ export default class Crud extends Component {
               </div>
 
               <div className="p-10">
-                <table className="table text-xl shadow-xl shadow-slate-400">
+                <table className="table text-xl shadow-xl shadow-slate-400 ">
                   <thead>
                     <tr>
                       <th scope="col"> Id</th>

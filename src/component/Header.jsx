@@ -16,7 +16,7 @@ export default class Header extends Component {
                 <div className='w-1/2'>
                     <div className='font-Poppins font-bold text-slate-300 text-2xl	'><AutoStoriesIcon className='mb-1 mr-4 ml-4 text-stone-50'/>Books Catalog</div>
                 </div>
-                <div className='w-1/2 flex'>
+                <div className='w-1/2 flex mr-20'>
                               <div className='flex w-full justify- gap-12 align-middle text-white'>
                                  <NavLink to={"/"} className={({ isActive }) =>
                                  isActive ? activeLink : normalLink

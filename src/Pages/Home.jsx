@@ -15,16 +15,19 @@ export default class Home extends Component {
   constructor() {
     super();
     this.state = {
-      bookList:[]
+      bookList: [],
+      cat:""
     };
   }
 
   componentDidMount() {
-    this.getAllBooks();
+    this.getAllBooks("");
   }
 
-  getAllBooks = () => {
-    axios.get("books/all?bookName=&category=").then((res) => {
+  getAllBooks = (c) => {
+    
+    
+    axios.get(`books/all?bookName=&category=${c}`).then((res) => {
       console.log(res.data.responseData + "books");
       this.setState((prevState) => ({
         ...prevState,
@@ -32,9 +35,7 @@ export default class Home extends Component {
       }));
     });
   }
-handleChange = () => {
-    setAge(target.value );
-  };
+
   render() {
     return (
       <>
@@ -61,15 +62,13 @@ handleChange = () => {
                     <Select
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
-                  value={0}
                   label="Age"
-                onChange={""}
                 sx={{ width: 300 }}
               >
-                  <MenuItem value={0}>All</MenuItem>
-                  <MenuItem value={10}>Horror</MenuItem>
-                  <MenuItem value={20}>Romantic</MenuItem>
-                  <MenuItem value={30}>Novels</MenuItem>
+                  <MenuItem onClick={()=>this.getAllBooks("")} value={"all"}>All</MenuItem>
+                  <MenuItem onClick={()=>this.getAllBooks("Horror")}  value={"Horror"}>Horror</MenuItem>
+                  <MenuItem onClick={()=>this.getAllBooks("Romantic")}  value={20}>Romantic</MenuItem>
+                  <MenuItem onClick={()=>this.getAllBooks("Novels")}  value={30}>Novels</MenuItem>
                 </Select>
             </form>
           </div>
