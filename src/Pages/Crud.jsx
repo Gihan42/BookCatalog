@@ -57,6 +57,7 @@ export default class Crud extends Component {
     axios
       .post("http://localhost:8080/api/v1/books", newBook).then((res) => {
         this.getAllBooks();
+        alert(res.data.message);
         console.log(res);
       })
       .catch((error) => {});
@@ -75,6 +76,7 @@ export default class Crud extends Component {
     }
     axios.put("http://localhost:8080/api/v1/books",book).then((res) => {
       alert(res.data.message);
+      this.getAllBooks();
     }).catch((error) => {
       alert('something went wrong')
     });
